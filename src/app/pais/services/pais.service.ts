@@ -1,19 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaisService {
 
-  private apiUrl:string = 'https://restcountries.com/v3.1/name/united'
+  private _country: any = [];
 
-  constructor(private http:HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
-
-  buscarPais(termino:string): Observable<any>{
-    const url = `${this.apiUrl}/name/${termino}`;
-    return this.http.get(url);
+  get country() {
+    return this._country
   }
+
+  searchCountry(keywork: string) {
+    this.http.get(`https://restcountries.com/v3.1/name/${keywork}`)
+      .subscribe((country: any) => {
+        this._country = country
+      })
+
+  }
+
 }

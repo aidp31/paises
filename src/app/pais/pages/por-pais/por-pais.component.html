@@ -15,7 +15,7 @@
   no se encontro la Busqueda {{ termino }}
 </div>
 
-<div *ngIf="hayError" class="row">
+<div class="row">
   <div class="col">
     <table class="table table-hover">
       <thead>
@@ -28,8 +28,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
+        <tr *ngFor="let pais of country">
+          <td>{{country.country}}</td>
           <td>Banderas</td>
           <td>nombres</td>
           <td>10000</td>
