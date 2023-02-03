@@ -18,7 +18,6 @@ export class PaisService {
     this.http.get(`https://restcountries.com/v3.1/name/${keywork}`)
       .subscribe((country: any) => {
         this._country = country
-        console.log(country)
       })
 
   }
