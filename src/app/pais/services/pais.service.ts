@@ -19,7 +19,5 @@ export class PaisService {
       .subscribe((country: any) => {
         this._country = country
       })
-
   }
-
 }

@@ -10,19 +10,16 @@ export class PorPaisComponent implements OnInit {
 
   termino: string = '';
 
-  constructor(private readonly paisService: PaisService){}
+  constructor(private readonly paisService: PaisService) { }
 
-  get country(){
+  get country() {
     return this.paisService.country
   }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
-
-  buscar(){
+  buscar() {
     return this.paisService.searchCountry(this.termino)
-
   }
-
 }
