@@ -9,28 +9,17 @@ import { PaisService } from '../../services/pais.service';
 export class PorPaisComponent implements OnInit {
 
   termino: string = '';
-  hayError: boolean = false;
 
-  constructor(private readonly paisService: PaisService){}
+  constructor(private readonly paisService: PaisService) { }
 
-  get country(){
+  get country() {
     return this.paisService.country
   }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
-
-  buscar(){
-    this.hayError = false;
-    this.paisService.searchCountry(this.termino)
-
-  /*  this.paisService.buscarPais(this.termino).subscribe
-    ((resp) =>{
-      console.log(resp);
-    },(err)=>{
-      this.hayError = true;
-    })*/
+  buscar() {
+    return this.paisService.searchCountry(this.termino)
   }
-
 }
