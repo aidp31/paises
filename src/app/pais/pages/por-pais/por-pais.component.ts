@@ -9,7 +9,6 @@ import { PaisService } from '../../services/pais.service';
 export class PorPaisComponent implements OnInit {
 
   termino: string = '';
-  hayError: boolean = false;
 
   constructor(private readonly paisService: PaisService){}
 
@@ -22,8 +21,7 @@ export class PorPaisComponent implements OnInit {
 
 
   buscar(){
-    this.hayError = false;
-    this.paisService.searchCountry(this.termino)
+    return this.paisService.searchCountry(this.termino)
 
   /*  this.paisService.buscarPais(this.termino).subscribe
     ((resp) =>{
